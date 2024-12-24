@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дневник</title>
+    <link rel="stylesheet" href="/css/diary.css">
+</head>
+<body>
+
+<h1>Дневник</h1>
+
+<div class="container">
+    <div class="input-group">
+        <input type="text" id="post-title" placeholder="Заголовок" />
+    </div>
+    <div class="input-group">
+        <textarea id="post-description" placeholder="Описание" rows="4"></textarea>
+    </div>
+    <div class="input-group">
+        <input type="url" id="post-image" placeholder="Ссылка на изображение" />
+    </div>
+    <div class="input-group">
+        <input type="url" id="post-link" placeholder="Ссылка" />
+    </div>
+    <button onclick="addPost()">Добавить пост</button>
+</div>
+
+<div id="posts-container"></div>
+
+<script src="/js/diary.js">
+    
+</script>
+
+</body>
+</html>

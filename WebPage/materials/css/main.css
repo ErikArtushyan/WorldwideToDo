@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    text-decoration: none;
+    font-family: "Inter Tight", sans-serif;
+}
+
+body {
+    background: url('/images/mountain.jpg');
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    color: white;
+    max-width: 600px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.205);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container > h1 {
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    background: rgba(255, 255, 255, 0.242);
+    width: 640px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 0px 10px 6px rgb(194,206,214);
+    -moz-box-shadow: 0px 0px 10px 6px rgb(194,206,214);
+    box-shadow: 0px 0px 10px 6px rgb(194,206,214);
+}
+
+.chAva {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: all .5s ease;
+}
+
+.chAva:hover {
+    -webkit-box-shadow: 0px 0px 10px 5px rgb(255, 255, 255);
+    -moz-box-shadow: 0px 0px 10px 5px rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px 5px rgb(255, 255, 255);
+    width: 60px;
+    height: 60px;
+}
+
+.navLinks {
+    color: white;
+    transition: all .5s ease;
+}
+
+.navLinks:hover {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+input, label {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: all .5s ease;
+    margin: 10px 5px;
+}
+
+button:hover {
+    color: black;
+    background-color: white;
+    border: 3px solid black;
+    padding: 10px 15px;
+    box-shadow: 6px 6px 13px -2px rgba(142, 147, 151, 0.6);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.not-started {
+    background-color: gray;
+}
+
+.in-progress {
+    background-color: blue;
+}
+
+.completed {
+    background-color: green;
+}
+
+li button {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+li button:hover {
+    background-color: #c82333;
+}
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Окно фиксировано на экране */
+    z-index: 1; /* На переднем плане */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Прокрутка, если необходимо */
+    background-color: rgb(0,0,0); /* Черный фон */
+    background-color: rgba(0,0,0,0.4); /* Полупрозрачный фон */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% сверху и центрирование */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ширина окна */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input {
+    border-radius: 10px;
+    border: none;
+}
+
+#navbtn {
+    display: none;
+}
+
+
+@media (max-width: 500px) {
+    body {
+        background-size: auto;
+    }
+    .navbar {
+       display: none;
+       flex-direction: column;
+    }
+
+    .mob-nav-holder {
+        opacity: 0;
+        transform: translateX(-300px);
+        transition: all .5s ease;
+    }
+
+    #navbtn {
+        display: inline;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 60px;
+    }
+    
+    #navbtn::before {
+        content: " ";
+        position: absolute;
+        top: 3px;
+        left: 4px;
+        width: 50px;
+        height: 50px;
+        background: url("/images/hamburger.png");
+
+    }
+
+    #navbtn:hover::before {
+        top: 2px;
+        left: 3px;
+        background: url("/images/hamburger_hover.png");
+    }
+    
+}
+
+@media (min-width: 500px) and (max-width:720px) {
+    body {
+        background-size: auto;
+    }
+
+    .navbar {
+       display: none;
+       flex-direction: column;
+    }
+
+    .mob-nav-holder, #navbtn {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+}
+
+@media (min-width: 720px) {
+    body {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .mob-nav-holder {
+        display: none;
+    }
+}
+
+@media screen and (orientation:landscape) {
+    body {
+        background-size: 150%;
+        background-repeat: no-repeat;
+    }
+}
+
+@media screen and (orientation:portrait) {
+    body {
+        background-size: 150rem;
+        background-repeat: no-repeat;
+    }
+}
+
+
+

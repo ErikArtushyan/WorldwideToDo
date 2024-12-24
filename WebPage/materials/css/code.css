@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    font-family: "Inter Tight", sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+body {
+    cursor: none;
+    background-color: black;
+}
+
+.holder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+}
+
+#shadow {
+    --beton: white;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    box-shadow: 0 0 12rem 6rem var(--beton);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+#telegram-login-Worldwide_Success_Bot {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 24px;
+    margin: 0 40%;
+    padding: 10px 15px;
+    transition: all .5s ease;
+    width: 250px;
+    height: 60px;
+  }
+
+#telegram-login-Worldwide_Success_Bot:hover {
+    background-color: rgb(91, 236, 255);
+    border: 3px solid black;
+    padding: 10px 15px;
+    box-shadow: 6px 6px 13px -2px rgba(142, 147, 151, 0.6);
+}
+
+.check-code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.button {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: all .5s ease;
+    margin: 10px 5px;
+}
+
+.button:hover {
+    color: black;
+    background-color: white;
+    border: 3px solid black;
+    padding: 10px 15px;
+    box-shadow: 6px 6px 13px -2px rgba(142, 147, 151, 0.6);
+}
+
+#notes {
+    display: flex;
+    align-items: center;
+    padding: 20px 10px;
+    border: 2px dashed white;
+    background-color: black;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+#note {
+    padding: 0 10px ;
+    overflow-x: visible;
+}
+
+#InpHolder {
+    display: flex;
+    align-items: center;
+    min-height: 85px;
+}
+
+#codeInput {
+    height: 20px;
+    border-radius: 8px;
+    border: 1px solid black;
+    color: black;
+}
+
+
+@media (min-width: 720px) and (max-width: 1024px) {
+    .holder {
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
+}
+
+@media (max-width: 720px) {
+    .holder {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .container {
+        width: 100%;
+        height: min-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #telegram-login-Worldwide_Success_Bot {
+        margin: 80% 10%;
+    }
+
+    #InpHolder {
+        flex-direction: column;
+    }
+
+    #lamp {
+        display: none;
+    }
+}
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добро пожаловать</title>
+    <link rel="stylesheet" href="/css/welcome.css">
+    <script async src="https://telegram.org/js/telegram-widget.js?7"
+            data-telegram-login="Worldwide_Success_Bot"  
+            data-size="large"
+            data-radius="10"
+            data-auth-url="http://127.0.0.1:5000/auth" 
+            data-payload="some_payload"
+            data-userpic="false"
+            data-lang="ru"></script>
+</head>
+<body>
+    <div class="container" id="container">
+        <div id="welcome">
+            <h1>Добро пожаловать!</h1>
+            <p>Чтобы пользоваться приложением, нужно пройти проверку:</p>
+            <button id="swapeBtn" onclick="swape()">Перейти к проверке</button>
+        </div>
+    </div>
+
+    <script src="/js/welcome.js"></script>
+</body>
+</html>
