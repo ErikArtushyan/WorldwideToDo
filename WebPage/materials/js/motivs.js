@@ -1,3 +1,8 @@
+if (document.referrer !== 'https://special-upward-shark.ngrok-free.app/motivs.html') {
+  window.location = "https://special-upward-shark.ngrok-free.app/motivs.html";
+}
+
+
 window.onload = function() {
     // Убираем загрузочный экран после загрузки страницы
     document.getElementById('loading').style.display = 'none';

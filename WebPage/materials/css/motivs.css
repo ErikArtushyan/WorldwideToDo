@@ -14,7 +14,7 @@ body {
 
 body::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
@@ -22,6 +22,54 @@ body::before {
     background: url("../images/worldwide_old.jpg") 50% 50% no-repeat;
     animation: 1.2s infinite alternate bg;
     filter: blur(10px);
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100vh;
+    background-color: black;
+    margin-bottom: 100px;
+}
+
+.about-desc {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.about-desc > h1{
+    font-size: 32px;
+    color: white;
+    padding: 0 8%;
+}
+
+.about-desc > p {
+    color: gray;
+    padding: 0 5%;
+    font-size: 22px;
+}
+
+
+.about-pic {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#me {
+    width: 100%;
+}
+
+#about {
+    display: flex;
+    margin: auto auto;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
 }
 
 .button {

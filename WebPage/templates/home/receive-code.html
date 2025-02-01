@@ -21,12 +21,12 @@
                 </p>
                 <div id="notes">
                     <img src="/images/lamp.png" alt="Lamp" id="lamp"><span id="note">Примечание: </span> <p>Код от бота действует
-                        7 дней. Это сделанно для интересов канала и приложения, чтобы нельзя было обходить проверку.
+                        7 дней. Это сделано для интересов канала и приложения, чтобы нельзя было обходить проверку.
                     </p>
                 </div>
                 <p>Полученный код вставляем в строку: "Введите код". Далее на кнопку: "Проверить код", если результат
-                    успешен, то вас автоматический спустя 3 секунды после ответа, направит на основное приложение.
-                    Если вы получили: "Введенный код недействителен", то для начала проверьте код, на отсутствие
+                    успешен, то вас автоматически, спустя 3 секунды после ответа, направит на основное приложение.
+                    Если вы получили: "Введенный код недействителен", то для начала проверьте код на отсутствие
                     пробелов и ошибок. Если и это не помогло, то проверьте актуальность кода, нажав в боте: "/check-sub",
                     повторно. 
                 </p>
@@ -42,62 +42,79 @@
             </div>
         </div>
     </div>
-    
-    
 
     <script>
+        // Проверка реферера
         if (document.referrer !== 'https://special-upward-shark.ngrok-free.app/welcome.html') {
-                window.location = "https://special-upward-shark.ngrok-free.app/welcome.html";
-            }
+            window.location = "https://special-upward-shark.ngrok-free.app/welcome.html";
+        }
+
+        // Перенаправление в бота
         document.getElementById('redirectBot').addEventListener('click', async () => {
-            window.location.href = "https://t.me/Worldwide_Success_Bot?start"
+            window.location.href = "https://t.me/Worldwide_Success_Bot?start";
         });
 
+        // Анимация тени
         let shadow = document.querySelector("#shadow");
 
-const mouse_shadow = function(event) {
-  shadow.style.top = event.pageY + 'px';
-  shadow.style.left = event.pageX + 'px';
-}
+        const mouse_shadow = function(event) {
+            shadow.style.top = event.pageY + 'px';
+            shadow.style.left = event.pageX + 'px';
+        }
 
-document.querySelector("body").onload = function() {
-  this.addEventListener("mousemove", mouse_shadow)
-}
+        document.querySelector("body").onload = function() {
+            this.addEventListener("mousemove", mouse_shadow);
+        }
 
+        // Проверка кода
         document.getElementById('checkButton').addEventListener('click', async () => {
             const code = document.getElementById('codeInput').value;
             const userId = localStorage.getItem('userId'); // Получаем userId из localStorage
 
-            const response = await fetch('/check-code', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ code, userId }), // Отправляем код и userId
-            });
+            if (!code || !userId) {
+                document.getElementById('result').textContent = 'Ошибка: код или userId не указаны.';
+                return;
+            }
 
-            const resultDiv = document.getElementById('result');
-            if (response.ok) {
-                const data = await response.json(); // Получаем данные из ответа
-    resultDiv.textContent = 'Код действителен! Доступ разрешен.';
-    localStorage.setItem('responseData', JSON.stringify(data));
-                setTimeout(() => 
-                window.location.href = "/loading.html"
-            , 3000);
-            } else {
-                const data = await response.json();
-    resultDiv.textContent = data.message || 'Код недействителен. Доступ запрещен.';
-    localStorage.setItem('responseData', JSON.stringify(data)); // Сохраняем сообщение об ошибке
+            try {
+                const response = await fetch('/check-code', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ code, userId }), // Отправляем код и userId
+                });
+
+                const resultDiv = document.getElementById('result');
+                if (response.ok) {
+                    const data = await response.json(); // Получаем данные из ответа
+                    resultDiv.textContent = 'Код действителен! Доступ разрешен.';
+                    localStorage.setItem('responseData', JSON.stringify(data));
+
+                    // Перенаправление через 3 секунды
+                    setTimeout(() => {
+                        window.location.href = "/index.html";
+                    }, 3000);
+                } else {
+                    const data = await response.json();
+                    resultDiv.textContent = data.message || 'Код недействителен. Доступ запрещен.';
+                    localStorage.setItem('responseData', JSON.stringify(data)); // Сохраняем сообщение об ошибке
+                }
+            } catch (error) {
+                console.error('Ошибка при проверке кода:', error);
+                document.getElementById('result').textContent = 'Ошибка при проверке кода. Попробуйте снова.';
             }
         });
-</script>
-        <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="Worldwide_Success_Bot" data-size="large" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
-        <script type="text/javascript">
-            function onTelegramAuth(user) {
-                alert('Вы уже зашли, как пользователь: ' + user.first_name + ' ' + user.last_name + ' I I ' + '@' + user.username);
-                localStorage.setItem('userId', user.id); // Сохраняем userId в localStorage
-                document.getElementById('telegram-login-Worldwide_Success_Bot').style.display = 'none'; // Скрываем iframe
-            }
-        </script>
+    </script>
+
+    <!-- Telegram Widget -->
+    <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="Worldwide_Success_Bot" data-size="large" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
+    <script type="text/javascript">
+        function onTelegramAuth(user) {
+            alert('Вы уже зашли, как пользователь: ' + user.first_name + ' ' + user.last_name + ' I I ' + '@' + user.username);
+            localStorage.setItem('userId', user.id); // Сохраняем userId в localStorage
+            document.getElementById('telegram-login-Worldwide_Success_Bot').style.display = 'none'; // Скрываем iframe
+        }
+    </script>
 </body>
 </html>

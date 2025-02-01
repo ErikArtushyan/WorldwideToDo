@@ -8,31 +8,55 @@
 </head>
 <body>
     <header>
-        <button id="navbtn" onclick="anyFunction()"></button>
-            <div class="mob-nav-holder">
-                <ul class="mobnav">
-                    <li><a class="navLinks" href="calculator.html">Калькулятор</a></li>
-                    <li><a class="navLinks" href="diary.html">Дневник</a></li>
-                    <li><a href="https://t.me/worldwide_success2"><img class="chAva" src="/images/worldwide.png" alt="My Channel Img"></a></li>
-                    <li><a class="navLinks" href="motivs.html">Мотивы</a></li>
-                    <li><a class="navLinks" href="about.html">О приложение</a></li>
-                </ul>
-            </div>
-        <ul class="navbar">
-            <li><a class="navLinks" href="calculator.html">Калькулятор</a></li>
-            <li><a class="navLinks" href="diary.html">Дневник</a></li>
-            <li><a href="https://t.me/worldwide_success2"><img class="chAva" src="/images/worldwide.png" alt="My Channel Img"></a></li>
-            <li><a class="navLinks" href="motivs.html">Мотивы</a></li>
-            <li><a class="navLinks" href="about.html">О приложение</a></li>
-        </ul>
+        <div class="header-absolute">
+            <h1 class="header-absolute-text">WorldwideToDo</h1>
+        </div>
+
+        <div class="header-content">
+            <h1 class="header-content-text">Tasks</h1>
+        </div>
     </header>
 
+
+  <nav class="navbar">
+    <ul>
+      <li>
+        <a href="index.html">
+          <img src="/images/tasks.png" alt="Icon 1">
+        </a>
+      </li>
+      <li>
+        <a href="calculator.html">
+          <img src="/images/calculator.png" alt="Icon 2">
+        </a>
+      </li>
+      <li>
+        <a href="diary.html">
+          <img src="/images/note.png" alt="Icon 3">
+        </a>
+      </li>
+      <li>
+        <a href="motivs.html">
+          <img src="/images/info-desk.png" alt="Icon 4">
+        </a>
+      </li>
+      <li>
+        <a href="about.html">
+          <img src="/images/info-circle.png" alt="Icon 5">
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+
+
+
     <div class="container">
-        <h1>Менеджер задач</h1>
+        <h1>Description</h1>
         <input type="text" id="taskInput" placeholder="Введите задачу...">
-        <label for="startTime">Время начала:</label>
+        <h1>Start Data</h1>
         <input type="datetime-local" id="startTime">
-        <label for="endTime">Время окончания:</label>
+        <h1>End Data</h1>
         <input type="datetime-local" id="endTime">
         
         <button id="addTaskBtn">Добавить задачу</button>

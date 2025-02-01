@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap');
 
 * {
     margin: 0;
@@ -6,67 +6,147 @@
     font-family: "Inter Tight", sans-serif;
 }
 
-body {
-    background: url('/images/mountain.jpg');
-    background-size: cover;
-}
-
 header {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 300px;
+    background: url("/images/mountains.png");
+    background-size: cover;
+}
+
+.header-absolute {
+    position: absolute;
+    top: 25px;
+    left: 21px;
+}
+
+.header-absolute-text {
+    font-family: "Kantumruy Pro", serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.801);
+}
+
+.header-content {
+    position: absolute;
+    top: 17%;
+    left: 30%;
+}
+
+.header-content-text {
+    font-family: "Roboto Slab", serif;
+    font-weight: 400;
+    font-size: 58px;
+    color: white;
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 30%;
+    left: 30%;
     color: white;
     max-width: 600px;
     margin: auto;
-    background: rgba(255, 255, 255, 0.205);
+    background: white;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-width: 500px;
 }
 
 .container > h1 {
     padding: 10px 0;
+    font-family: "Josefin Sans", serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: black;
 }
+
+.container > input {
+    border: solid 1px gray;
+}
+
+
+
+
+
 
 .navbar {
-    display: flex;
-    justify-content: space-evenly;
-    background: rgba(255, 255, 255, 0.242);
-    width: 640px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    -webkit-box-shadow: 0px 0px 10px 6px rgb(194,206,214);
-    -moz-box-shadow: 0px 0px 10px 6px rgb(194,206,214);
-    box-shadow: 0px 0px 10px 6px rgb(194,206,214);
-}
-
-.chAva {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    transition: all .5s ease;
-}
-
-.chAva:hover {
-    -webkit-box-shadow: 0px 0px 10px 5px rgb(255, 255, 255);
-    -moz-box-shadow: 0px 0px 10px 5px rgb(255, 255, 255);
-    box-shadow: 0px 0px 10px 5px rgb(255, 255, 255);
+    position: fixed;
+    left: 0;
+    top: 25%;
+    height: 500px;
     width: 60px;
-    height: 60px;
-}
-
-.navLinks {
-    color: white;
-    transition: all .5s ease;
-}
-
-.navLinks:hover {
-    border: 2px solid black;
-    padding: 10px;
-}
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  
+  .navbar:hover {
+    width: 100px;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .navbar li {
+    margin: 20px 0;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    transform: scale(1.1);
+  }
+  
+  .navbar img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .navbar:hover img {
+    transform: rotate(360deg);
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .navbar {
+      width: 50px;
+    }
+  
+    .navbar:hover {
+      width: 150px;
+    }
+  
+    .navbar img {
+      width: 25px;
+      height: 25px;
+    }
+  }
 
 h1 {
     text-align: center;
@@ -140,6 +220,10 @@ li button {
 
 li button:hover {
     background-color: #c82333;
+}
+
+#taskList {
+    color: black;
 }
 
 .modal {
