@@ -1,5 +1,17 @@
-if (document.referrer !== 'https://special-upward-shark.ngrok-free.app/motivs.html') {
-  window.location = "https://special-upward-shark.ngrok-free.app/motivs.html";
+if (document.referrer !== 'https://special-upward-shark.ngrok-free.app/receive-code.html') {
+  window.location = "https://special-upward-shark.ngrok-free.app/receive-code.html";
+}
+
+if (document.referrer !== 'https://special-upward-shark.ngrok-free.app/index.html') {
+  window.location = "https://special-upward-shark.ngrok-free.app/index.html";
+}
+
+if (document.referrer !== 'https://special-upward-shark.ngrok-free.app/calculator.html') {
+  window.location = "https://special-upward-shark.ngrok-free.app/calculator.html";
+}
+
+if (document.referrer !== 'https://special-upward-shark.ngrok-free.app/diary.html') {
+  window.location = "https://special-upward-shark.ngrok-free.app/diary.html";
 }
 
 
